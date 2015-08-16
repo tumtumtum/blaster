@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2EEB00F0-02E1-4935-B5AE-40F022FCC781}</ProjectGuid>
+    <RootNamespace>Blaster</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\ffmpeg\include;$(SolutionDir)\libuv\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\ffmpeg\include;$(SolutionDir)\libuv\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/D "_CRT_SECURE_NO_WARNINGS" %(AdditionalOptions)</AdditionalOptions>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>advapi32.lib;iphlpapi.lib;psapi.lib;shell32.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\ffmpeg\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/D "_CRT_SECURE_NO_WARNINGS" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>advapi32.lib;iphlpapi.lib;psapi.lib;shell32.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\ffmpeg\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="FileBytesReader.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="OutgoingHttpRequest.cpp" />
+    <ClCompile Include="HttpConnection.cpp" />
+    <ClCompile Include="HttpConnectionFactory.cpp" />
+    <ClCompile Include="HttpHeaders.cpp" />
+    <ClCompile Include="HttpMessage.cpp" />
+    <ClCompile Include="HttpParser.cpp" />
+    <ClCompile Include="http_parser.c" />
+    <ClCompile Include="HttpRequest.cpp" />
+    <ClCompile Include="HttpResponse.cpp" />
+    <ClCompile Include="HttpServer.cpp" />
+    <ClCompile Include="IncomingHttpConnection.cpp" />
+    <ClCompile Include="IncomingHttpResponse.cpp" />
+    <ClCompile Include="OutgoingHttpConnection.cpp" />
+    <ClCompile Include="IncomingHttpRequest.cpp" />
+    <ClCompile Include="OutgoingHttpResponse.cpp" />
+    <ClCompile Include="ProducingIncomingHttpResponse.cpp" />
+    <ClCompile Include="ResponseSavingOutgoingHttpConnection.cpp" />
+    <ClCompile Include="SavingBytesConsumer.cpp" />
+    <ClCompile Include="ServerConfig.cpp" />
+    <ClCompile Include="UrlPathUtils.cpp" />
+    <ClCompile Include="Url.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libuv\libuv.vcxproj">
+      <Project>{33066374-88cb-cb8d-15da-61032886329a}</Project>
+      <Private>true</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Collections.h" />
+    <ClInclude Include="FileBytesReader.h" />
+    <ClInclude Include="GenericQueue.h" />
+    <ClInclude Include="GenericQueueDistributionCenter.h" />
+    <ClInclude Include="IBytesProducer.h" />
+    <ClInclude Include="IBytesConsumer.h" />
+    <ClInclude Include="IGenericDataProducer.h" />
+    <ClInclude Include="OutgoingHttpRequest.h" />
+    <ClInclude Include="HttpConnection.h" />
+    <ClInclude Include="HttpConnectionFactory.h" />
+    <ClInclude Include="HttpHeaders.h" />
+    <ClInclude Include="HttpMessage.h" />
+    <ClInclude Include="HttpParser.h" />
+    <ClInclude Include="http_parser.h" />
+    <ClInclude Include="ISupportsNotifications.h" />
+    <ClInclude Include="IncomingHttpConnection.h" />
+    <ClInclude Include="IncomingHttpResponse.h" />
+    <ClInclude Include="KeyValueCollection.h" />
+    <ClInclude Include="HttpRequest.h" />
+    <ClInclude Include="HttpResponse.h" />
+    <ClInclude Include="HttpServer.h" />
+    <ClInclude Include="KeyValuePair.h" />
+    <ClInclude Include="OutgoingHttpConnection.h" />
+    <ClInclude Include="IncomingHttpRequest.h" />
+    <ClInclude Include="OutgoingHttpResponse.h" />
+    <ClInclude Include="ProducingIncomingHttpResponse.h" />
+    <ClInclude Include="BytesQueue.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ResponseSavingOutgoingHttpConnection.h" />
+    <ClInclude Include="SavingBytesConsumer.h" />
+    <ClInclude Include="ServerConfig.h" />
+    <ClInclude Include="TlsSingleton.h" />
+    <ClInclude Include="UrlPathUtils.h" />
+    <ClInclude Include="Url.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Blaster.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
